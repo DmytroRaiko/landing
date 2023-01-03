@@ -1,0 +1,101 @@
+@import './src/variables';
+
+.sign-in {
+  .content {
+    padding: 104px;
+    background: $backgroundPrimary;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+    grid-gap: 125px;
+
+    @media (max-width: $widthMain) {
+      display: flex;
+      flex-direction: column;
+      padding: 18px;
+      grid-gap: 0;
+    }
+  }
+
+  .sign-in-form {
+    border-radius: 16px;
+    padding: 55px 40px;
+    background: $backgroundHome;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @media (max-width: $widthMain) {
+      padding: 40px 24px;
+    }
+
+      input {
+      width: 100%;
+      margin-top: 16px;
+
+      &:nth-child(0) {
+        margin-top: 25px;
+      }
+    }
+
+    button {
+      margin-top: 32px;
+    }
+
+    img.leaf {
+      position: absolute;
+      top: 0;
+      right: -30px;
+
+      &:nth-child(5) {
+        animation: leafMove1 5s infinite;
+      }
+
+      &:last-child {
+        top: 50px;
+        right: -20px;
+        animation: leafMove2 10s infinite;
+      }
+    }
+  }
+}
+
+@keyframes leafMove1 {
+  0% {
+    transform: rotateY(50deg) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: rotateY(220deg) translateY(200px);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(300px);
+  }
+  100% {
+    transform: rotateY(70deg) translateY(400px);
+    opacity: 0;
+  }
+}
+
+
+@keyframes leafMove2 {
+  0% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  5% {
+    transform: rotateY(90deg) translateY();
+  }
+  50% {
+    opacity: 1;
+    transform: rotateY(50deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(180deg) translateY(300px);
+    opacity: 0;
+  }
+}

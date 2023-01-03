@@ -1,0 +1,134 @@
+@import './src/variables';
+
+
+.slider {
+  width: 100%;
+  height: auto;
+  background: $backgroundPrimary;
+
+  .content {
+    //display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slider-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 80px;
+
+    button.btn {
+      background: none;
+      border-radius: 0;
+      border: 1px solid transparent;
+      color: #1E1A20;
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      -o-transition: all .5s;
+      transition: all .5s;
+      padding: 10px;
+
+      &:hover {
+          border-color: #1E1A20;
+      }
+    }
+  }
+
+  .slide {
+    &__background {
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 5;
+    }
+
+    &__content {
+      position: relative;
+      background: #F7F3F4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      height: 350px;
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      -o-transition: all .5s;
+      transition: all .5s;
+      scale: .85;
+
+      @media (max-width: $widthMain) {
+        height: 280px;
+        //width: 350px;
+      }
+
+      .text {
+        margin-top: 8px;
+        color: transparent;
+      }
+
+      .title {
+        color: white;
+        z-index: 10;
+        margin-top: 40%;
+
+        @media (max-width: $widthMain) {
+          margin-top: 70%;
+        }
+      }
+
+      &.active  {
+        scale: 1.2;
+        box-shadow: 0 0 10px 20px rgba(247, 243, 244, 0.5);
+
+        @media (max-width: $widthMain) {
+        }
+
+          .title {
+          color: inherit;
+        }
+
+        .text {
+          color: inherit;
+          width: 80%;
+        }
+
+        .slide__background {
+          left: -30%;
+          top: -35%;
+          scale: .5;
+          box-shadow: 0 0 7px 5px #00000050;
+        }
+      }
+    }
+  }
+
+  .slick-slide {
+    &r {
+      margin-top: 30px;
+    }
+
+    padding: 90px 40px 90px;
+  }
+  .slick-track {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  @media (max-width: $widthMain) {
+    .slick-slide {
+      //width: 350px;
+    }
+  }
+}

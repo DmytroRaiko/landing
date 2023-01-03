@@ -1,0 +1,64 @@
+@import './src/variables';
+
+.footer {
+  height: auto;
+  margin-top: 107px;
+  margin-bottom: 88px;
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 290px;
+
+
+  @media (max-width: $widthMain) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 0;
+    margin: 43px 30px;
+    width: calc(100% - 60px);
+
+    .contacts-block {
+      grid-column-start: 1;
+      grid-column-end: 3;
+
+      .contacts {
+        display: flex;
+      }
+    }
+  }
+
+  .footer-block {
+    display: grid;
+    grid-template-rows: 100px auto;
+    align-items: start;
+
+    @media (max-width: $widthMain) {
+      grid-template-rows: 50px auto;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+  }
+
+  h6 {
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  .social-media-block {
+    @media (max-width: $widthMain) {
+      margin-left: 30px;
+    }
+
+    .social-media ul {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+    }
+  }
+}
+
