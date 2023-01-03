@@ -252,14 +252,35 @@ menu {
     &.right {
       position: relative;
 
+      &:hover {
+        .card-members {
+          transform: rotate3d(1, 2, 1, 20deg);
+        }
+      }
+
       @media (max-width: $widthMain) {
         height: 600px;
       }
 
-      .parrot,
-      .members,
-      .members-icon,
-      .text {
+      .card-members {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 30px;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+
+        .members-icon,
+        .text {
+          position: absolute;
+        }
+      }
+
+      .parrot {
         position: absolute;
       }
 
@@ -270,8 +291,6 @@ menu {
 
       .members {
         width: 272px;
-        top: 50%;
-        left: 20%;
 
         img {
           width: inherit;
@@ -280,15 +299,15 @@ menu {
 
       .members-icon,
       .text {
-        left: 25%;
+        left: 25px;
       }
 
       .members-icon {
-        top: 55%;
+        top: 25px;
       }
 
       .text {
-        bottom: -12%;
+        bottom: 25px;
 
         h1, h6 {
           color: #fff;
@@ -305,16 +324,8 @@ menu {
           left: 50px;
           top: 10px;
         }
-        .members {
+        .card-members {
           left: 4%
-        }
-        .members-icon,
-        .text {
-          left: 12%;
-        }
-
-        .text {
-          bottom: 0;
         }
       }
     }
@@ -343,5 +354,19 @@ menu {
     display: flex;
     flex-direction: row;
     align-items: center;
+  }
+}
+
+.leaf {
+  &__1 {
+    animation: leaf1 8s linear infinite forwards;
+  }
+
+  &__2 {
+    animation: leaf2 8s linear infinite forwards;
+  }
+
+  &__3 {
+    animation: leaf3 8s linear infinite forwards;
   }
 }

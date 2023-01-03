@@ -6,13 +6,6 @@
   height: auto;
   background: $backgroundPrimary;
 
-  .content {
-    //display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
   .slider-footer {
     display: flex;
     flex-direction: row;
@@ -123,12 +116,5 @@
   .slick-track {
     display: flex;
     justify-content: center;
-  }
-
-
-  @media (max-width: $widthMain) {
-    .slick-slide {
-      //width: 350px;
-    }
   }
 }

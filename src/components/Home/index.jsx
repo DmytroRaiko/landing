@@ -38,19 +38,21 @@ const HomeContent = () => {
           <ParrotIcon />
         </div>
 
-        <div className="members">
-          <img src={members} alt="members"/>
-        </div>
+        <div className="card-members">
+          <div className="members">
+            <img src={members} alt="members"/>
+          </div>
 
-        <div className="members-icon">
-          <MemberIcon />
-        </div>
+          <div className="members-icon">
+            <MemberIcon />
+          </div>
 
-        <div className="text">
+          <div className="text">
           <h6>Members</h6>
           <h1>
             29 128
           </h1>
+        </div>
         </div>
       </div>
     </div>
